@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './page.module.css';
 
 const teamMembers = [
@@ -7,7 +8,7 @@ const teamMembers = [
     role: 'Lead Developer',
     bio: 'Full-stack developer with 8+ years of experience in React and Node.js. Passionate about creating efficient and scalable web applications.',
     avatar: '👩‍💻',
-    skills: ['React', 'TypeScript', 'Node.js', 'Next.js']
+    skills: ['React', 'TypeScript', 'Node.js', 'Next.js'],
   },
   {
     id: 2,
@@ -15,7 +16,7 @@ const teamMembers = [
     role: 'UI/UX Designer',
     bio: 'Creative designer focused on user-centered design principles. Specializes in modern, accessible interfaces that users love.',
     avatar: '👨‍🎨',
-    skills: ['Figma', 'Design Systems', 'Prototyping', 'User Research']
+    skills: ['Figma', 'Design Systems', 'Prototyping', 'User Research'],
   },
   {
     id: 3,
@@ -23,31 +24,35 @@ const teamMembers = [
     role: 'DevOps Engineer',
     bio: 'Infrastructure specialist ensuring smooth deployments and optimal performance. Expert in cloud technologies and CI/CD pipelines.',
     avatar: '👨‍💼',
-    skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD']
-  }
+    skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD'],
+  },
 ];
 
 const values = [
   {
     icon: '🚀',
     title: 'Innovation',
-    description: 'We embrace cutting-edge technologies and methodologies to deliver exceptional solutions.'
+    description:
+      'We embrace cutting-edge technologies and methodologies to deliver exceptional solutions.',
   },
   {
     icon: '🤝',
     title: 'Collaboration',
-    description: 'We believe in the power of teamwork and open communication to achieve great results.'
+    description:
+      'We believe in the power of teamwork and open communication to achieve great results.',
   },
   {
     icon: '🎯',
     title: 'Quality',
-    description: 'We are committed to delivering high-quality code and user experiences that exceed expectations.'
+    description:
+      'We are committed to delivering high-quality code and user experiences that exceed expectations.',
   },
   {
     icon: '📚',
     title: 'Learning',
-    description: 'We foster a culture of continuous learning and professional growth for our team.'
-  }
+    description:
+      'We foster a culture of continuous learning and professional growth for our team.',
+  },
 ];
 
 export default function AboutPage() {
@@ -58,7 +63,8 @@ export default function AboutPage() {
         <div className={styles.heroContent}>
           <h1 className={styles.title}>About Next Boilerplate</h1>
           <p className={styles.subtitle}>
-            Building the future of web development with modern tools and best practices.
+            Building the future of web development with modern tools and best
+            practices.
           </p>
           <div className={styles.heroStats}>
             <div className={styles.stat}>
@@ -83,14 +89,16 @@ export default function AboutPage() {
           <div className={styles.missionText}>
             <h2 className={styles.sectionTitle}>Our Mission</h2>
             <p className={styles.missionDescription}>
-              We are dedicated to creating exceptional web experiences that combine beautiful design 
-              with powerful functionality. Our team specializes in modern React applications, focusing 
-              on performance, accessibility, and user experience.
+              We are dedicated to creating exceptional web experiences that
+              combine beautiful design with powerful functionality. Our team
+              specializes in modern React applications, focusing on performance,
+              accessibility, and user experience.
             </p>
             <p className={styles.missionDescription}>
-              Through this Next.js boilerplate, we aim to provide developers with a solid foundation 
-              for building scalable, maintainable, and modern web applications. We believe in the power 
-              of open-source collaboration and continuous improvement.
+              Through this Next.js boilerplate, we aim to provide developers
+              with a solid foundation for building scalable, maintainable, and
+              modern web applications. We believe in the power of open-source
+              collaboration and continuous improvement.
             </p>
           </div>
           <div className={styles.missionImage}>
@@ -127,7 +135,9 @@ export default function AboutPage() {
               <p className={styles.teamBio}>{member.bio}</p>
               <div className={styles.teamSkills}>
                 {member.skills.map((skill, index) => (
-                  <span key={index} className={styles.skill}>{skill}</span>
+                  <span key={index} className={styles.skill}>
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
@@ -140,7 +150,8 @@ export default function AboutPage() {
         <div className={styles.techContent}>
           <h2 className={styles.sectionTitle}>Technology Stack</h2>
           <p className={styles.techDescription}>
-            We use modern, battle-tested technologies to build robust and scalable applications.
+            We use modern, battle-tested technologies to build robust and
+            scalable applications.
           </p>
           <div className={styles.techGrid}>
             <div className={styles.techCategory}>
@@ -179,11 +190,16 @@ export default function AboutPage() {
         <div className={styles.ctaContent}>
           <h2 className={styles.ctaTitle}>Ready to Work Together?</h2>
           <p className={styles.ctaDescription}>
-            Let&apos;s build something amazing together. Get in touch to discuss your next project.
+            Let&apos;s build something amazing together. Get in touch to discuss
+            your next project.
           </p>
           <div className={styles.ctaButtons}>
-            <a href="/contact" className={styles.primaryButton}>Get In Touch</a>
-            <a href="/products" className={styles.secondaryButton}>View Our Work</a>
+            <Link href="/contact" className={styles.primaryButton}>
+              Get In Touch
+            </Link>
+            <Link href="/products" className={styles.secondaryButton}>
+              View Our Work
+            </Link>
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import styles from './error.module.css';
 
 interface ErrorPageProps {
   error: Error & { digest?: string };
-  reset: () => void;
+  reset: VoidFunction;
 }
 
 export default function ErrorPage({ error, reset }: ErrorPageProps) {

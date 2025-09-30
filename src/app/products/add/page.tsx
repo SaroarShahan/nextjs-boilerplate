@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import AddProductForm from '../../../components/products/AddProductForm';
+import AddProductForm from '~/components/products/AddProductForm';
 import styles from './page.module.css';
 
 export default function AddProductPage() {
