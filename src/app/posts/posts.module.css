@@ -1,0 +1,7 @@
+.posts {
+  padding: 1rem;
+}
+
+.posts li:not(:last-child) {
+  margin-bottom: 1rem;
+}
