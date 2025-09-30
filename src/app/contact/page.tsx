@@ -15,30 +15,32 @@ export default function ContactPage() {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
@@ -46,7 +48,7 @@ export default function ContactPage() {
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
       });
     }, 3000);
   };
@@ -56,14 +58,15 @@ export default function ContactPage() {
       <div className={styles.header}>
         <h1 className={styles.title}>Contact Us</h1>
         <p className={styles.subtitle}>
-          We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
+          We&apos;d love to hear from you. Send us a message and we&apos;ll
+          respond as soon as possible.
         </p>
       </div>
 
       <div className={styles.content}>
         <div className={styles.contactInfo}>
           <h2 className={styles.sectionTitle}>Get in Touch</h2>
-          
+
           <div className={styles.infoItem}>
             <div className={styles.infoIcon}>📧</div>
             <div className={styles.infoContent}>
@@ -85,8 +88,10 @@ export default function ContactPage() {
             <div className={styles.infoContent}>
               <h3 className={styles.infoTitle}>Office</h3>
               <p className={styles.infoText}>
-                123 Tech Street<br />
-                San Francisco, CA 94105<br />
+                123 Tech Street
+                <br />
+                San Francisco, CA 94105
+                <br />
                 United States
               </p>
             </div>
@@ -95,10 +100,18 @@ export default function ContactPage() {
           <div className={styles.socialLinks}>
             <h3 className={styles.socialTitle}>Follow Us</h3>
             <div className={styles.socialIcons}>
-              <a href="#" className={styles.socialIcon}>🐙</a>
-              <a href="#" className={styles.socialIcon}>🐦</a>
-              <a href="#" className={styles.socialIcon}>💼</a>
-              <a href="#" className={styles.socialIcon}>📘</a>
+              <a href="#" className={styles.socialIcon}>
+                🐙
+              </a>
+              <a href="#" className={styles.socialIcon}>
+                🐦
+              </a>
+              <a href="#" className={styles.socialIcon}>
+                💼
+              </a>
+              <a href="#" className={styles.socialIcon}>
+                📘
+              </a>
             </div>
           </div>
         </div>
@@ -107,7 +120,9 @@ export default function ContactPage() {
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <label htmlFor="name" className={styles.label}>Name *</label>
+                <label htmlFor="name" className={styles.label}>
+                  Name *
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -118,9 +133,11 @@ export default function ContactPage() {
                   required
                 />
               </div>
-              
+
               <div className={styles.formGroup}>
-                <label htmlFor="email" className={styles.label}>Email *</label>
+                <label htmlFor="email" className={styles.label}>
+                  Email *
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -134,7 +151,9 @@ export default function ContactPage() {
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="subject" className={styles.label}>Subject *</label>
+              <label htmlFor="subject" className={styles.label}>
+                Subject *
+              </label>
               <input
                 type="text"
                 id="subject"
@@ -147,7 +166,9 @@ export default function ContactPage() {
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="message" className={styles.label}>Message *</label>
+              <label htmlFor="message" className={styles.label}>
+                Message *
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -164,14 +185,20 @@ export default function ContactPage() {
               className={styles.submitButton}
               disabled={isSubmitting || isSubmitted}
             >
-              {isSubmitting ? 'Sending...' : isSubmitted ? 'Message Sent!' : 'Send Message'}
+              {isSubmitting
+                ? 'Sending...'
+                : isSubmitted
+                ? 'Message Sent!'
+                : 'Send Message'}
             </button>
           </form>
 
           {isSubmitted && (
             <div className={styles.successMessage}>
               <div className={styles.successIcon}>✅</div>
-              <p>Thank you for your message! We&apos;ll get back to you soon.</p>
+              <p>
+                Thank you for your message! We&apos;ll get back to you soon.
+              </p>
             </div>
           )}
         </div>
