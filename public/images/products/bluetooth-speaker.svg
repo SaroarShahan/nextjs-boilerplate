@@ -1,0 +1,61 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#f8fafc"/>
+  
+  <!-- Speaker shadow -->
+  <ellipse cx="200" cy="350" rx="100" ry="25" fill="#e2e8f0"/>
+  
+  <!-- Main speaker body -->
+  <rect x="120" y="120" width="160" height="200" rx="80" fill="#1e293b"/>
+  <rect x="125" y="125" width="150" height="190" rx="75" fill="#374151"/>
+  
+  <!-- Speaker grille -->
+  <rect x="140" y="140" width="120" height="160" rx="60" fill="#000000"/>
+  
+  <!-- Speaker drivers -->
+  <!-- Main driver -->
+  <circle cx="200" cy="200" r="45" fill="#334155"/>
+  <circle cx="200" cy="200" r="40" fill="#475569"/>
+  <circle cx="200" cy="200" r="30" fill="#1f2937"/>
+  <circle cx="200" cy="200" r="20" fill="#374151"/>
+  <circle cx="200" cy="200" r="8" fill="#64748b"/>
+  
+  <!-- Tweeter -->
+  <circle cx="200" cy="160" r="15" fill="#334155"/>
+  <circle cx="200" cy="160" r="12" fill="#475569"/>
+  <circle cx="200" cy="160" r="6" fill="#64748b"/>
+  
+  <!-- Bass port -->
+  <rect x="185" y="270" width="30" height="8" rx="4" fill="#1f2937"/>
+  
+  <!-- Control buttons -->
+  <circle cx="160" cy="90" r="8" fill="#64748b"/>
+  <circle cx="180" cy="90" r="8" fill="#64748b"/>
+  <circle cx="200" cy="90" r="10" fill="#3b82f6"/>
+  <circle cx="220" cy="90" r="8" fill="#64748b"/>
+  <circle cx="240" cy="90" r="8" fill="#64748b"/>
+  
+  <!-- Button icons -->
+  <text x="200" y="95" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="12" font-weight="700">▶</text>
+  <text x="180" y="95" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">-</text>
+  <text x="220" y="95" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8">+</text>
+  
+  <!-- Bluetooth indicator -->
+  <path d="M160 95 L165 90 L165 100 L160 95 L165 85 L165 105" stroke="#3b82f6" stroke-width="2" fill="none"/>
+  
+  <!-- Waterproof indicator -->
+  <path d="M235 85 Q240 80 245 85 Q240 90 235 85" fill="#22c55e"/>
+  
+  <!-- Sound waves -->
+  <path d="M100 160 Q80 200 100 240" stroke="#3b82f6" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M300 160 Q320 200 300 240" stroke="#3b82f6" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M80 140 Q50 200 80 260" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M320 140 Q350 200 320 260" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M60 120 Q20 200 60 280" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.3"/>
+  <path d="M340 120 Q380 200 340 280" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.3"/>
+  
+  <!-- Brand ring -->
+  <circle cx="200" cy="200" r="50" stroke="#3b82f6" stroke-width="2" fill="none" opacity="0.3"/>
+  
+  <!-- Label -->
+  <text x="200" y="380" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="16" font-weight="600">BLUETOOTH SPEAKER</text>
+</svg>

@@ -1,0 +1,52 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.backLink {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.backLink:hover {
+  opacity: 1;
+  color: #64b5f6;
+  transform: translateX(-4px);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+  background: linear-gradient(135deg, #64b5f6, #42a5f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--foreground);
+  opacity: 0.8;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}

@@ -25,6 +25,11 @@ const Header = () => {
                 Products
               </Link>
             </li>
+            <li className={styles.navItem}>
+              <Link href="/products/add" className={styles.navLink}>
+                Add Product
+              </Link>
+            </li>
             <li>
               <Link href="/posts" className={styles.navLink}>
                 Posts

@@ -1,3 +1,51 @@
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.backLink {
+  color: #64b5f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.backLink:hover {
+  color: #42a5f5;
+  transform: translateX(-2px);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.editButton {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.editButton:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-1px);
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -536,4 +584,172 @@
   .productTitle {
     font-size: 1.5rem;
   }
+}
+
+/* New styles for server component version */
+.imageWrapper {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  backdrop-filter: blur(10px);
+}
+
+.productImage {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.placeholderIcon {
+  font-size: 4rem;
+  opacity: 0.5;
+  margin-bottom: 1rem;
+}
+
+.imagePlaceholder p {
+  color: var(--foreground);
+  opacity: 0.6;
+  margin: 0;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.productHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.5rem;
+}
+
+.productTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+  line-height: 1.2;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #64b5f6;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  opacity: 0.9;
+  margin: 0;
+}
+
+.productMeta {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.metaItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metaItem:last-child {
+  border-bottom: none;
+}
+
+.metaLabel {
+  font-weight: 500;
+  color: var(--foreground);
+  opacity: 0.8;
+}
+
+.metaValue {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.primaryButton {
+  flex: 1;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #64b5f6, #42a5f5);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(100, 181, 246, 0.3);
+}
+
+.primaryButton:hover {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(100, 181, 246, 0.4);
+}
+
+.secondaryButton {
+  flex: 1;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--foreground);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
 }
