@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from 'next/font/google';
 
 import Footer from '~/components/layouts/footer';
 import './globals.css';
-import styles from './layout.module.css';
 import Header from '~/components/layouts/header';
 
 const geistSans = Geist({
@@ -34,41 +33,29 @@ export default function RootLayout({
         <Footer />
 
         {/* Global Animated Background */}
-        <div className={styles.animatedBackground}>
-          <div
-            className={styles.floatingElement}
-            style={{ top: '10%', left: '10%' }}
-          >
+        <div className="animatedBackground">
+          <div className="floatingElement" style={{ top: '10%', left: '10%' }}>
             💻
           </div>
-          <div
-            className={styles.floatingElement}
-            style={{ top: '20%', right: '15%' }}
-          >
+          <div className="floatingElement" style={{ top: '20%', right: '15%' }}>
             🚀
           </div>
           <div
-            className={styles.floatingElement}
+            className="floatingElement"
             style={{ bottom: '30%', left: '20%' }}
           >
             ⚡
           </div>
           <div
-            className={styles.floatingElement}
+            className="floatingElement"
             style={{ bottom: '20%', right: '10%' }}
           >
             🎯
           </div>
-          <div
-            className={styles.floatingElement}
-            style={{ top: '60%', left: '5%' }}
-          >
+          <div className="floatingElement" style={{ top: '60%', left: '5%' }}>
             ⭐
           </div>
-          <div
-            className={styles.floatingElement}
-            style={{ top: '70%', right: '5%' }}
-          >
+          <div className="floatingElement" style={{ top: '70%', right: '5%' }}>
             🎨
           </div>
         </div>
