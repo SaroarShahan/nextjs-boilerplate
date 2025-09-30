@@ -9,11 +9,17 @@ export const revalidate = 60;
 
 // Generate static params for SSG
 export async function generateStaticParams() {
-  const products = await getProducts();
+  try {
+    const products = await getProducts();
 
-  return products.map((product) => ({
-    id: product.id.toString(),
-  }));
+    return products.map((product) => ({
+      id: product.id.toString(),
+    }));
+  } catch (error) {
+    console.warn('Failed to get products for static generation:', error);
+    // Return empty array if database is not accessible during build
+    return [];
+  }
 }
 
 interface ProductPageProps {

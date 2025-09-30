@@ -15,17 +15,25 @@ export async function createProduct(data: ProductPayload) {
 }
 
 export async function getProducts() {
-  const products = await prisma.product.findMany();
-
-  return products;
+  try {
+    const products = await prisma.product.findMany();
+    return products;
+  } catch (error) {
+    console.error('Failed to fetch products:', error);
+    return [];
+  }
 }
 
 export async function getProduct(productId: number) {
-  const product = await prisma.product.findUnique({
-    where: { id: productId },
-  });
-
-  return product;
+  try {
+    const product = await prisma.product.findUnique({
+      where: { id: productId },
+    });
+    return product;
+  } catch (error) {
+    console.error('Failed to fetch product:', error);
+    return null;
+  }
 }
 
 export async function updateProduct(productId: number, data: ProductPayload) {
