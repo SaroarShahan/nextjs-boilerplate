@@ -1,0 +1,292 @@
+.container {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  text-align: center;
+  max-width: 700px;
+  z-index: 2;
+  position: relative;
+}
+
+.errorIcon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: var(--foreground);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.errorDetails {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.detailsTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.errorBox {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid #f44336;
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  font-family: var(--font-jetbrains-mono), 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-word;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.errorId {
+  color: var(--foreground);
+  opacity: 0.7;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.digest {
+  color: #64b5f6;
+  font-family: var(--font-jetbrains-mono), 'Courier New', monospace;
+  background: rgba(100, 181, 246, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.retryButton,
+.homeButton,
+.contactButton {
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.retryButton {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+}
+
+.retryButton:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+}
+
+.homeButton {
+  background: linear-gradient(135deg, #64b5f6, #42a5f5);
+  color: white;
+}
+
+.homeButton:hover {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(100, 181, 246, 0.4);
+}
+
+.contactButton {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--foreground);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.contactButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(100, 181, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.helpSection {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.helpText {
+  color: var(--foreground);
+  opacity: 0.7;
+  font-size: 1rem;
+}
+
+.contactLink {
+  color: #64b5f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #42a5f5;
+  text-decoration: underline;
+}
+
+.statusIndicator {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  backdrop-filter: blur(10px);
+  z-index: 3;
+}
+
+.statusIcon {
+  font-size: 1.2rem;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.statusText {
+  color: var(--foreground);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .errorDetails,
+  .suggestions {
+    padding: 1.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .retryButton,
+  .homeButton,
+  .contactButton {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .statusIndicator {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .errorIcon {
+    font-size: 4rem;
+  }
+
+  .errorDetails {
+    padding: 1rem;
+  }
+
+  .errorMessage {
+    font-size: 0.8rem;
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .contactButton {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .contactButton:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .errorBox {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
