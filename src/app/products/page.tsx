@@ -1,10 +1,9 @@
+import { Suspense } from 'react';
 import styles from './page.module.css';
-import { getProducts } from '~/actions/productionActions';
-import ProductCard from '~/components/products/ProductCard';
+import ProductList from '~/components/products/ProductList';
+import ProductListSkeleton from '~/components/products/ProductListSkeleton';
 
 export default async function ProductsPage() {
-  const products = await getProducts();
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -15,11 +14,9 @@ export default async function ProductsPage() {
         </p>
       </div>
 
-      <div className={styles.productsGrid}>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      <Suspense fallback={<ProductListSkeleton />}>
+        <ProductList />
+      </Suspense>
     </div>
   );
 }

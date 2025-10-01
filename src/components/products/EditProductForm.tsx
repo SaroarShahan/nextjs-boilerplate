@@ -3,12 +3,14 @@
 import { useState, useEffect } from 'react';
 import styles from './styles/addProductForm.module.css';
 import { getProduct, updateProduct } from '~/actions/productionActions';
+import { useParams } from 'next/navigation';
 
-interface EditProductFormProps {
-  productId: string;
-}
+export default function EditProductForm() {
+  const { id: productId } = useParams<{ id: string }>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [uploadMethod, setUploadMethod] = useState<'file' | 'url'>('url');
 
-export default function EditProductForm({ productId }: EditProductFormProps) {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -16,15 +18,11 @@ export default function EditProductForm({ productId }: EditProductFormProps) {
     image: '',
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [uploadMethod, setUploadMethod] = useState<'file' | 'url'>('url');
-
   // Load existing product data
   useEffect(() => {
     const loadProduct = async () => {
       try {
-        const product = await getProduct(parseInt(productId));
+        const product = await getProduct(parseInt(productId!));
         if (product) {
           setFormData({
             title: product.title,
