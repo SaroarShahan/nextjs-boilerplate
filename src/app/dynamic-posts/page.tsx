@@ -1,7 +1,7 @@
 import { sleep } from '~/utils';
 
 import styles from './dynamic-posts.module.css';
-import { Suspense } from 'react';
+import { Suspense, use } from 'react';
 
 const fetchUserList = async () => {
   await sleep(3000);
@@ -12,7 +12,7 @@ const fetchUserList = async () => {
 
 const fetchPostList = async () => {
   await sleep(4500);
-  return fetch('https://jsonplaceholder.typicode.com/posts').then(
+  return fetch('https://jsonplaceholder.typicode.com/posts?_limit=10').then(
     (res) => res.json() as Promise<Post[]>
   );
 };
@@ -28,7 +28,7 @@ export default async function DynamicPostsPage() {
   return (
     <div className="p-1">
       <Suspense fallback={<div>Loading users...</div>}>
-        <UserList />
+        <UserList fetchUserList={fetchUserList} />
       </Suspense>
 
       <p className="my-2">
@@ -39,14 +39,18 @@ export default async function DynamicPostsPage() {
       </p>
 
       <Suspense fallback={<div>Loading posts...</div>}>
-        <PostList />
+        <PostList fetchPostList={fetchPostList} />
       </Suspense>
     </div>
   );
 }
 
-const UserList = async () => {
-  const users = await fetchUserList();
+interface UserProps {
+  fetchUserList: () => Promise<User[]>;
+}
+
+const UserList = ({ fetchUserList }: UserProps) => {
+  const users = use(fetchUserList());
 
   return (
     <div>
@@ -57,8 +61,12 @@ const UserList = async () => {
   );
 };
 
-const PostList = async () => {
-  const posts = await fetchPostList();
+interface PostListProps {
+  fetchPostList: () => Promise<Post[]>;
+}
+
+const PostList = ({ fetchPostList }: PostListProps) => {
+  const posts = use(fetchPostList());
 
   return (
     <div>
@@ -67,7 +75,9 @@ const PostList = async () => {
           {post.title}
 
           <Suspense fallback={<div>Loading authors...</div>}>
-            <AuthorList postId={post.userId} />
+            <AuthorList
+              fetchAuthorsList={() => fetchAuthorsList(post.userId)}
+            />
           </Suspense>
         </div>
       ))}
@@ -75,8 +85,12 @@ const PostList = async () => {
   );
 };
 
-const AuthorList = async ({ postId }: { postId: number }) => {
-  const author = await fetchAuthorsList(postId);
+interface AuthorListProps {
+  fetchAuthorsList: () => Promise<User>;
+}
+
+const AuthorList = async ({ fetchAuthorsList }: AuthorListProps) => {
+  const author = await fetchAuthorsList();
 
   return (
     <div className={styles.authors}>

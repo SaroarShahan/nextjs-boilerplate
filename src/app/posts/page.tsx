@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import styles from './posts.module.css';
 
+export const revalidate = 10; // Revalidate every 10 seconds
+
 export default async function PostsPage() {
   const posts: Post[] = await fetch(
     'https://jsonplaceholder.typicode.com/posts'
