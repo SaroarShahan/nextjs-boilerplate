@@ -111,90 +111,96 @@ const CreateOrderForm = () => {
         />
       </div>
       <div className="mb-2">
-        <h2>Service:</h2>
+        <div className="mb-2">
+          <h2>Service:</h2>
 
-        {services.map((service, serviceIndex) => (
-          <div key={service.id} className="mb-2">
-            <div>
-              <label>Name:</label>
-              <input
-                name="name"
-                id={`service-name-${service.id}`}
-                value={service.name}
-                onChange={(evt) => handleServiceChange(evt, serviceIndex)}
-              />
-            </div>
+          {services.map((service, serviceIndex) => (
+            <div key={service.id} className="mb-2">
+              <div>
+                <label>Name:</label>
+                <input
+                  name="name"
+                  id={`service-name-${service.id}`}
+                  value={service.name}
+                  onChange={(evt) => handleServiceChange(evt, serviceIndex)}
+                />
+              </div>
 
-            <div>
-              <label>Concern:</label>
-              <input
-                name="concern"
-                id={`service-concern-${service.id}`}
-                value={service.concern}
-                onChange={(evt) => handleServiceChange(evt, serviceIndex)}
-              />
+              <div>
+                <label>Concern:</label>
+                <input
+                  name="concern"
+                  id={`service-concern-${service.id}`}
+                  value={service.concern}
+                  onChange={(evt) => handleServiceChange(evt, serviceIndex)}
+                />
+              </div>
+              <div>
+                <label>Cause:</label>
+                <input
+                  name="cause"
+                  id={`service-cause-${service.id}`}
+                  value={service.cause}
+                  onChange={(evt) => handleServiceChange(evt, serviceIndex)}
+                />
+              </div>
+              <div>
+                <label>Correction:</label>
+                <input
+                  name="correction"
+                  id={`service-correction-${service.id}`}
+                  value={service.correction}
+                  onChange={(evt) => handleServiceChange(evt, serviceIndex)}
+                />
+              </div>
             </div>
-            <div>
-              <label>Cause:</label>
-              <input
-                name="cause"
-                id={`service-cause-${service.id}`}
-                value={service.cause}
-                onChange={(evt) => handleServiceChange(evt, serviceIndex)}
-              />
-            </div>
-            <div>
-              <label>Correction:</label>
-              <input
-                name="correction"
-                id={`service-correction-${service.id}`}
-                value={service.correction}
-                onChange={(evt) => handleServiceChange(evt, serviceIndex)}
-              />
-            </div>
-          </div>
-        ))}
+          ))}
 
-        <button type="button" onClick={handleAddNewService}>
-          Add service
-        </button>
+          <button type="button" onClick={handleAddNewService}>
+            Add service
+          </button>
+        </div>
 
-        {labor.map((labor, laborIndex) => (
-          <div key={laborIndex} className="mb-2">
-            <div>
-              <label>Name:</label>
-              <input
-                name="name"
-                id={`labor-name-${laborIndex}`}
-                value={labor.name}
-                onChange={(evt) => handleLaborChange(evt, laborIndex)}
-              />
-            </div>
-            <div>
-              <label>Rate:</label>
-              <input
-                name="rate"
-                id={`labor-rate-${laborIndex}`}
-                value={labor.rate}
-                onChange={(evt) => handleLaborChange(evt, laborIndex)}
-              />
-            </div>
+        <div>
+          <h2>Labor:</h2>
 
-            <div>
-              <label>Hours:</label>
-              <input
-                name="hours"
-                id={`labor-hours-${laborIndex}`}
-                value={labor.hours}
-                onChange={(evt) => handleLaborChange(evt, laborIndex)}
-              />
-            </div>
-          </div>
-        ))}
+          {labor.map((labor, laborIndex) => (
+            <div key={laborIndex} className="mb-2">
+              <div>
+                <label>Name:</label>
+                <input
+                  name="name"
+                  id={`labor-name-${laborIndex}`}
+                  value={labor.name}
+                  onChange={(evt) => handleLaborChange(evt, laborIndex)}
+                />
+              </div>
+              <div>
+                <label>Rate:</label>
+                <input
+                  name="rate"
+                  id={`labor-rate-${laborIndex}`}
+                  value={labor.rate}
+                  onChange={(evt) => handleLaborChange(evt, laborIndex)}
+                />
+              </div>
 
-        <button type="button" onClick={handleAddNewLabor}>
-          Add labor
-        </button>
+              <div>
+                <label>Hours:</label>
+                <input
+                  name="hours"
+                  id={`labor-hours-${laborIndex}`}
+                  value={labor.hours}
+                  onChange={(evt) => handleLaborChange(evt, laborIndex)}
+                />
+              </div>
+            </div>
+          ))}
+
+          <button type="button" onClick={handleAddNewLabor}>
+            Add labor
+          </button>
+        </div>
       </div>
 
       <button type="submit">Create Order</button>
