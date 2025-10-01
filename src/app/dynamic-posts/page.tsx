@@ -54,9 +54,13 @@ const UserList = ({ fetchUserList }: UserProps) => {
 
   return (
     <div>
-      {users.map((user) => (
-        <div key={user.id}>{user.name}</div>
-      ))}
+      <h2>Users</h2>
+
+      <div>
+        {users.map((user) => (
+          <div key={user.id}>{user.name}</div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -70,17 +74,21 @@ const PostList = ({ fetchPostList }: PostListProps) => {
 
   return (
     <div>
-      {posts.map((post) => (
-        <div key={post.id}>
-          {post.title}
+      <h2>Posts</h2>
 
-          <Suspense fallback={<div>Loading authors...</div>}>
-            <AuthorList
-              fetchAuthorsList={() => fetchAuthorsList(post.userId)}
-            />
-          </Suspense>
-        </div>
-      ))}
+      <div>
+        {posts.map((post) => (
+          <div key={post.id}>
+            {post.title}
+
+            <Suspense fallback={<div>Loading authors...</div>}>
+              <AuthorList
+                fetchAuthorsList={() => fetchAuthorsList(post.userId)}
+              />
+            </Suspense>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
