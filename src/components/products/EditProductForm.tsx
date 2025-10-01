@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import styles from './styles/addProductForm.module.css';
 import { getProduct, updateProduct } from '~/actions/productionActions';
 import { useParams } from 'next/navigation';
+import EditProductFormSkeleton from './EditProductFormSkeleton';
 
 export default function EditProductForm() {
   const { id: productId } = useParams<{ id: string }>();
@@ -77,13 +78,7 @@ export default function EditProductForm() {
   };
 
   if (isLoading) {
-    return (
-      <div className={styles.form}>
-        <div style={{ textAlign: 'center', padding: '2rem' }}>
-          <p>Loading product data...</p>
-        </div>
-      </div>
-    );
+    return <EditProductFormSkeleton />;
   }
 
   return (

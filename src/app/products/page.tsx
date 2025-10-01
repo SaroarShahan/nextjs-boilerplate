@@ -3,6 +3,8 @@ import styles from './page.module.css';
 import ProductList from '~/components/products/ProductList';
 import ProductListSkeleton from '~/components/products/ProductListSkeleton';
 
+export const revalidate = 300; // Revalidate every 5 minutes
+
 export default async function ProductsPage() {
   return (
     <div className={styles.container}>

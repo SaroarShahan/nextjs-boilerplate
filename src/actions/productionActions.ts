@@ -4,6 +4,7 @@ import { revalidatePath, revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 
 import prisma from '~/db';
+import { sleep } from '~/utils';
 
 export async function createProduct(data: ProductPayload) {
   const product = await prisma.product.create({ data });
@@ -15,6 +16,8 @@ export async function createProduct(data: ProductPayload) {
 }
 
 export async function getProducts() {
+  await sleep(2000);
+
   try {
     const products = await prisma.product.findMany();
     return products;
@@ -25,6 +28,8 @@ export async function getProducts() {
 }
 
 export async function getProduct(productId: number) {
+  await sleep(2000);
+
   try {
     const product = await prisma.product.findUnique({
       where: { id: productId },
