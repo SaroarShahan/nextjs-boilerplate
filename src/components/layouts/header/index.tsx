@@ -35,6 +35,11 @@ const Header = () => {
                 Posts
               </Link>
             </li>
+            <li>
+              <Link href="/dynamic-posts" className={styles.navLink}>
+                Dynamic Posts
+              </Link>
+            </li>
             <li className={styles.navItem}>
               <Link href="/about" className={styles.navLink}>
                 About

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './posts.module.css';
 
 export default async function PostsPage() {
@@ -14,7 +15,11 @@ export default async function PostsPage() {
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-            <h2>{post.title}</h2>
+            <h2>
+              <Link href={`/posts/${post.id}`} className={styles.postLink}>
+                {post.title}
+              </Link>
+            </h2>
             <p>{post.body}</p>
           </li>
         ))}

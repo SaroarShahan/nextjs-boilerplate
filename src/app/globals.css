@@ -47,6 +47,18 @@ ul {
   }
 }
 
+.p-1 {
+  padding: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
 /* Global Animated Background */
 .animatedBackground {
   position: fixed;
