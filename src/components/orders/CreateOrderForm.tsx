@@ -100,7 +100,7 @@ const CreateOrderForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="p-1">
       <div className="mb-2">
         <label>Name:</label>
         <input
