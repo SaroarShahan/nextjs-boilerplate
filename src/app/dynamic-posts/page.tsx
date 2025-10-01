@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { sleep } from '~/utils';
 
 import styles from './dynamic-posts.module.css';
@@ -78,8 +77,6 @@ const PostList = async () => {
 
 const AuthorList = async ({ postId }: { postId: number }) => {
   const author = await fetchAuthorsList(postId);
-
-  console.log('authors', author);
 
   return (
     <div className={styles.authors}>
