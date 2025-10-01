@@ -40,6 +40,12 @@ const Header = () => {
                 Dynamic Posts
               </Link>
             </li>
+            <li>
+              <Link href="/orders" className={styles.navLink}>
+                Orders
+              </Link>
+            </li>
+
             <li className={styles.navItem}>
               <Link href="/about" className={styles.navLink}>
                 About
